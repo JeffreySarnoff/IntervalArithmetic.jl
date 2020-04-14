@@ -1,6 +1,6 @@
 # ArbNumerics is imported in IntervalArithmetic.jl
 using ArbNumerics: ArbFloat, ArbReal, ArbComplex, 
-    setworkingprecsion, setextrabits,
+    setworkingprecision, setextrabits,
     setball, setinterval, lobound, hibound
 
 export gamma
