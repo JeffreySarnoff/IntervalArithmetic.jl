@@ -5,6 +5,7 @@ __precompile__(true)
 module IntervalArithmetic
 
 import CRlibm
+import ArbNumerics
 
 using StaticArrays
 using FastRounding
