@@ -34,9 +34,9 @@ function arbreal(x::Interval)
     resetworkingprecision()
     xlo = x.lo
     xhi = x.hi
-    extraprec = Prior.prec + SupplementalBits
-    lo = copy(ArbFloat(x, extraprec), Prior.prec, RoundDown)
-    hi = copy(ArbFloat(x, extraprec), Prior.prec, RoundUp)
+    extraprec = PriorPrec.prec + SupplementalBits
+    lo = copy(ArbFloat(x, extraprec), PriorPrec.prec, RoundDown)
+    hi = copy(ArbFloat(x, extraprec), PriorPrec.prec, RoundUp)
     return setinterval(lo, hi)
  end
  
