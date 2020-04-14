@@ -35,8 +35,8 @@ function arbreal(x::Interval)
     xlo = x.lo
     xhi = x.hi
     extraprec = PriorPrec.prec + SupplementalBits
-    lo = copy(ArbFloat(xlo, extraprec), PriorPrec.prec, RoundDown)
-    hi = copy(ArbFloat(xhi, extraprec), PriorPrec.prec, RoundUp)
+    lo = copy(ArbFloat(xlo, bits=extraprec), PriorPrec.prec, RoundDown)
+    hi = copy(ArbFloat(xhi, bits=extraprec), PriorPrec.prec, RoundUp)
     return setinterval(lo, hi)
  end
  
