@@ -1,4 +1,34 @@
 # ArbNumerics is imported in IntervalArithmetic.jl
+
+using IntervalArithmetic
+using ArbNumerics: ArbFloat, ArbReal, ArbComplex, 
+    setball, setinterval, lobound, hibound
+
+# export gamma
+
+function resetprecision()
+    _, prec = precision(Interval)
+    setprecision(ArbFloat, prec)
+    return nothing
+end
+
+function arbreal(x::Interval)
+    resetprecision()
+    lo = ArbFloat(x.lo)
+    hi = ArbFloat(x.hi)
+    return setinterval(lo, hi)
+ end
+ 
+function gamma(x::Interval{T}) where T
+    result = ArbNumerics.gamma(arbreal(x))
+    lo, hi = ArbNumerics.interval(result)
+    ylo, yhi = T(lo), T(hi)
+    return Interval{T}(ylo, yhi)
+end 
+
+
+
+#=
 using ArbNumerics: ArbFloat, ArbReal, ArbComplex, 
     setworkingprecision, setextrabits,
     setball, setinterval, lobound, hibound
@@ -45,5 +75,6 @@ function gamma(x::Interval{T}) where T
     lo, hi = ArbNumerics.interval(result)
     ylo, yhi = T(lo), T(hi)
     return Interval(ylo, yhi)
- end 
-    
+end 
+
+=#
