@@ -40,7 +40,7 @@ function arbreal(x::Interval)
     return setinterval(lo, hi)
  end
  
-function gamma(x::Interva{T}) where T
+function gamma(x::Interval{T}) where T
     result = gamma(arbreal(x))
     lo, hi = ArbNumerics.interval(result)
     ylo, yhi = T(lo), T(hi)
