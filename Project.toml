@@ -1,7 +1,7 @@
 name = "IntervalArithmetic"
 uuid = "d1acc4aa-44c8-5952-acd4-ba5d80a2a253"
 repo = "https://github.com/JuliaIntervals/IntervalArithmetic.jl.git"
-version = "1.0.6"
+version = "1.1.0"
 
 [deps]
 CRlibm = "96374032-68de-5a5b-8d9e-752f78720389"
@@ -11,6 +11,7 @@ OpenBLASConsistentFPCSR_jll = "6cdc7f73-28fd-5e50-80fb-958a8875b1af"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 RoundingEmulator = "5eaf0fd0-dfba-4ccb-bf02-d820a40db705"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 
 [weakdeps]
 Arblib = "fb37089c-8514-4489-9461-98f9c8763369"
@@ -48,4 +49,6 @@ Random = "1.10"
 RecipesBase = "1"
 RoundingEmulator = "0.2"
 SparseArrays = "1.10"
+SpecialFunctions = "2.7"
+
 julia = "1.10"
